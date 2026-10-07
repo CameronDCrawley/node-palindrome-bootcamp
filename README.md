@@ -6,7 +6,7 @@ Type in a word or phrase and find out if it's a palindrome.
 
 A word or phrase that reads the same forwards and backwards. Like **racecar**, **level**, or **A man, a plan, a canal: Panama**. My checker ignores spaces, punctuation, and capital letters, so that last one actually counts.
 
-** How It Works **
+**How It Works**
 
 You type something in and hit the button. The front end sends your word to my server's `/api` route, the server checks it, and sends back the answer as JSON.
 
@@ -16,7 +16,7 @@ The check itself happens in 3 steps:
 2. **Flip it.** `.split('')` breaks it into letters, `.reverse()` flips the order, and `.join('')` puts it back together.
 3. **Compare.** If the cleaned-up word matches the flipped version, it's a palindrome.
 
-** Built With **
+**Built With**
 
 - Node.js
 - JavaScript
