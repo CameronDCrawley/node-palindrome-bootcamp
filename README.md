@@ -1,22 +1,36 @@
-# ↔️ Week08 Bootcamp2019a Project: Server Side Palindrome Checker
+Palindrome Checker
+Type in a word or phrase and find out if it's a palindrome.
 
-### Goal: Create a simple web application that uses the fs and http modules to validate if a string is a palindrome server side.
+What's a Palindrome?
+A word or phrase that reads the same forwards and backwards, like racecar, level, or A man, a plan, a canal: Panama. This checker automatically ignores spaces, punctuation, and capital letters, so phrases like the last one count properly.
 
-### How to submit your code for review:
+Features
+Text Input Validation: Type any word, phrase, or sentence to check its palindrome status.
 
-- Fork and clone this repo
-- Create a new branch called answer
-- Checkout answer branch
-- Push to your fork
-- Issue a pull request
-- Your pull request description should contain the following:
-  - (1 to 5 no 3) I completed the challenge
-  - (1 to 5 no 3) I feel good about my code
-  - Anything specific on which you want feedback!
+Smart Cleansing: Strips out spaces, punctuation, and case sensitivity automatically using regular expressions.
 
-Example:
-```
-I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
-```
+Client-Server Architecture: Sends your text to a Node.js server via an /api route, processes the logic, and returns the result in JSON format.
+
+How It Works
+You type something in and hit the button.
+
+The front end sends your word to the server's /api route, the server checks it, and sends back the answer as JSON.
+
+The server-side check happens in 3 steps:
+
+Clean it up: A regular expression (/[^A-Z0-9]/ig) strips out everything that isn't a letter or number, then .toLowerCase() normalizes the case.
+
+Flip it: .split('') breaks it into an array of letters, .reverse() flips the order, and .join('') stitches it back into a string.
+
+Compare: If the cleaned-up string matches the reversed version, it's a palindrome.
+
+Built With
+Node.js
+
+JavaScript
+
+HTML
+
+CSS
+
+![alt text](image.png)

@@ -1,8 +1,6 @@
 const http = require('http');
 const fs = require('fs')
 const url = require('url');
-const querystring = require('querystring');
-const figlet = require('figlet')
 
  function checkPalindrome(str){
         // removes special characters, spaces and makes lowercase. regular expression
