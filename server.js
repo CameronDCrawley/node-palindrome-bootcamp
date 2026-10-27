@@ -18,7 +18,14 @@ const url = require('url');
   }
 
 const server = http.createServer(function(req, res) {
-  const page = url.parse(req.url).pathname;
+  const page = new URL(req.url,'http://localhost').pathname
+  const params = Object.fromEntries(newURL(req.url, 'http://localhost').searchParams)
+
+  function checkPalindrome(word){
+    const inspected = String(word).toLowerCase.replace(/[^a-z0-9]/,'')
+    return inspected === inspected.split('').reverse().join('')
+  }
+  let userInput=params['palindrome']
 
   console.log(page);
   if (page == '/') {
@@ -75,4 +82,4 @@ const server = http.createServer(function(req, res) {
   }
 });
 
-server.listen(8000);
+server.listen(process.env.PORT ||8000)
