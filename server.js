@@ -20,7 +20,7 @@ const figlet= require('figlet')
 
 const server = http.createServer(function(req, res) {
   const page = new URL(req.url,'http://localhost').pathname
-  const params = Object.fromEntries(newURL(req.url, 'http://localhost').searchParams)
+  const params = Object.fromEntries(new URL(req.url, 'http://localhost').searchParams)
 
   function checkPalindrome(word){
     const inspected = String(word).toLowerCase.replace(/[^a-z0-9]/,'')
