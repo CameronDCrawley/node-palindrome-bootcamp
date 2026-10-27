@@ -43,7 +43,10 @@ const server = http.createServer(function(req, res) {
          
   let result = checkPalindrome(userInput)
         const objToJson = {
-          answer:result,
+          answer:result
+          ? `${userInput} is a palindrome`
+           :`${userInput} is a palindrome`
+
         }
         res.end(JSON.stringify(objToJson));
       }else {
