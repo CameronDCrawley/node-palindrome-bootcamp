@@ -10,9 +10,9 @@ A word or phrase that reads the same forwards and backwards, like racecar, level
 ## Features
 *Text Input Validation:* Type any word, phrase, or sentence to check its palindrome status.
 
-*Smart Cleansing:* Strips out spaces, punctuation, and case sensitivity automatically using regular expressions.
+**Smart Cleansing:** Strips out spaces, punctuation, and case sensitivity automatically using regular expressions.
 
-*Client-Server Architecture:* Sends your text to a Node.js server via an /api route, processes the logic, and returns the result in JSON format.
+**Client-Server Architecture:** Sends your text to a Node.js server via an /api route, processes the logic, and returns the result in JSON format.
 
 ## How It Works
 You type something in and hit the button.
@@ -21,11 +21,11 @@ The front end sends your word to the server's /api route, the server checks it, 
 
 The server-side check happens in 3 steps:
 
-*Clean it up:* A regular expression (/[^A-Z0-9]/ig) strips out everything that isn't a letter or number, then .toLowerCase() normalizes the case.
+**Clean it up:** A regular expression (/[^A-Z0-9]/ig) strips out everything that isn't a letter or number, then .toLowerCase() normalizes the case.
 
-*Flip it:* .split('') breaks it into an array of letters, .reverse() flips the order, and .join('') stitches it back into a string.
+**Flip it:** .split('') breaks it into an array of letters, .reverse() flips the order, and .join('') stitches it back into a string.
 
-*Compare:* If the cleaned-up string matches the reversed version, it's a palindrome.
+**Compare:** If the cleaned-up string matches the reversed version, it's a palindrome.
 
 ## Built With
 Node.js
