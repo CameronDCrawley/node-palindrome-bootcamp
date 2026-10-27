@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs')
 const url = require('url');
+const figlet= require('figlet')
 //const querystring = require('querystring');
 
  function checkPalindrome(str){
